@@ -2,7 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 small {
-  font-size: 13px;
+  font-size: 18px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 /* VARIABLES CSS */
@@ -19,6 +20,7 @@ small {
   --text-color-lighten: hsl(var(--hue), 8%, 92%);
   --body-color: hsl(var(--hue), 100%, 99%);
   --container-color: hsl(var(--hue), 8%, 92%);
+  --background: hsl(var(--hue), 0%, 0%, 15%);
 
   /*  Font and typography  */
   --body-font: 'Poppins', sans-serif;
@@ -83,15 +85,41 @@ img {
   transition: .3s;
 }
 
+.blog{
+  position:inherit;
+  top: -2rem;
+  /* left: 5rem; */
+  font-size: 1.25rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.visible {
+    display: block;
+}
+
 .change-theme:hover{
   color: var(--first-color);
 }
+
+.blog:hover{
+  color: var(--first-color);
+}
+
 /*  Variables Dark theme  */
 body.dark-theme{
   --title-color: hsl(var(--hue), 12%, 95%);
   --text-color: hsl(var(--hue), 12%, 75%);
   --body-color: hsl(var(--hue), 40%, 8%);
   --container-color: hsl(var(--hue), 24%, 12%);
+  --background: hsl(var(--hue), 0%, 15%);
 }
 
 /*  
@@ -127,8 +155,8 @@ body.dark-theme{
 /* REUSABLE CSS CLASSES */
 .container {
   max-width: 968px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .grid {
@@ -156,7 +184,7 @@ small p{
 }
 
 .profile__container{
-  row-gap: 2rem;
+  row-gap: 1rem;
 }
 
 .profile__data{
@@ -204,8 +232,7 @@ small p{
   margin-bottom: 1rem;
 }
 
-.profile__social{ 
-  display: flex;
+.profile__social{
   justify-content: center;
   column-gap: .75rem;
 }
@@ -236,8 +263,9 @@ small p{
 }
 
 .profile__buttons, 
-.profile__buttons-small{ 
-  display: flex;
+.profile__buttons-small{
+  margin-left: auto;
+  margin-right: auto;
   align-items: center;
   justify-content: center;
 }
@@ -252,10 +280,41 @@ column-gap: 1rem;
 
 .ri-github-fill,
 .ri-telegram-fill,
+.ri-skype-fill,
 .ri-linkedin-box-fill,
 .ri-mail-fill,
-.ri-discord-fill{
+.ri-discord-fill,
+.ri-youtube-fill{
   font-size: 40px;
+  transition: color 0.3s ease;
+}
+
+@keyframes rainbow {
+  0% { color: red; }
+  14% { color: orange; }
+  28% { color: yellow; }
+  42% { color: green; }
+  71% { color: indigo; }
+  85% { color: violet; }
+  100% { color: red; }
+}
+
+.ri-github-fill:hover {
+    background: linear-gradient(90deg, red, orange, yellow, green, cyan, violet);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.ri-youtube-fill:hover {
+    color: red;
+}
+
+.ri-mail-fill:hover {
+  color: orange;
+}
+
+.ri-discord-fill:hover, .ri-skype-fill:hover, .ri-linkedin-box-fill:hover{
+  color: var(--first-color);
 }
 
 
@@ -341,7 +400,7 @@ column-gap: 1rem;
 .education__card{
   position: relative;
   border-radius: 1rem;
- overflow: hidden;
+  overflow: hidden;
 }
 
 .education__card img{
@@ -352,8 +411,7 @@ column-gap: 1rem;
 .education__modal{ 
   position: absolute;
   width: 100%;
-  height: 100%; 
-  /* bottom: -100; */
+  height: 100%;
   left: 0;
   background: linear-gradient(180deg,
               hsla(var(--hue), 24%, 40%, .3) 0%, 
@@ -396,7 +454,6 @@ column-gap: 1rem;
 }
 
 .experience__box{
-  width: 350px;
   background-color: var(--container-color);
   padding: 20px;
   border-radius: 5px;
@@ -454,6 +511,13 @@ column-gap: 1rem;
   margin-bottom: 1.5rem;
 }
 
+.blog__title{
+  display:none;
+  font-size: var(--h3-font-size);
+  text-align: center; 
+  margin-bottom: 1.2rem;
+}
+
 .skills__box{
   display: flex;
   justify-content: center;
@@ -496,13 +560,82 @@ column-gap: 1rem;
   display: grid;
 }
 
+.blog__content{
+  display:none;
+  justify-content: center;
+  width: 340px;
+  height: 555px;
+  background-color: var(--body-color);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  padding-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0rem 0rem 3rem var(--background);
+}
+
+.blog__content img{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.blog__content h2{
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.blog__content sub, p{
+  padding-top: 0.4rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.blog__content p{
+  color: var(--title-color);
+}
+
+.blog__content div{
+  font-weight: bold;
+  padding-top: 1.5rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.telegram_link{
+  display: inline-flex;
+  align-items: center;
+  background-color: #2481cc;
+  color: var(--body-color);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4.5rem;
+  transition: .3s;
+  border: 2px solid #2481cc;
+}
+
+.open_in_telegram{
+  align-items: center;
+  background-color: var(--body-color);
+  color: #2481cc;
+  padding: 0.5rem 1.2rem;
+  border-radius: 4.5rem;
+  border: 2px solid #2481cc;
+  transition: .3s;
+}
+
 /* Activate button filter */
 .filter-tab-active{
   background-color: var(--body-color);
 }
 
 /* FOOTER */
-
 
 /* SCROLL BAR */
 ::-webkit-scrollbar{ 
@@ -540,12 +673,19 @@ background-color: hsl(var(--hue), 8%, 44%);
   .skills__box{
     column-gap: 1rem;
   }
+
 }
 
 /* For medium devices */
+
+@media screen and (min-width: 500px){ 
+  .blog__content{
+    width: 400;
+  }
+}
 @media screen and (min-width: 576px){ 
   .education__content{
-    grid-template-columns: 332px; 
+    grid-template-columns: 532px; 
     justify-content: center;
   }
 
@@ -574,12 +714,19 @@ background-color: hsl(var(--hue), 8%, 44%);
 
 }  
 
+@media (min-width: 900px) {
+  .experience__box {
+    width: 750px; 
+  }
+}
+
 /* For large devices */
 @media (max-width: 912px) {
   .education__card .education__modal {
     bottom: 0;
   }
 }
+
 
 @media screen and (min-width: 992px) { 
   .container {
@@ -589,6 +736,10 @@ background-color: hsl(var(--hue), 8%, 44%);
   .change-theme{
     top: 2.5rem;
     right: 2.5rem;
+  }
+
+  .blog{
+    top: -1.5rem;
   }
 
   .profile{
@@ -637,5 +788,9 @@ background-color: hsl(var(--hue), 8%, 44%);
   .skills__title{
     font-size: var(--normal-font-size);
     margin-bottom: 2.5rem;
+  }
+
+  .blog__title{
+    font-size: var(--normal-font-size);
   }
 }

@@ -70,6 +70,28 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
 
+const blogButton = document.querySelector('.ri-user-smile-line.blog');
+const mainContent = document.querySelector('.main');
+
+// Selecting the elements to be hidden
+const profileInfoDescription = document.querySelector('.profile__info-description');
+const profileButtons = document.querySelector('.profile__buttons');
+const profileSocial = document.querySelector('.profile__social');
+
+document.querySelector('.blog').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default link behavior
+    const blog__content = document.querySelector('.blog__content');
+    const blog__title = document.querySelector('.blog__title');
+
+    blog__content.style.display = (blog__content.style.display === 'none' || blog__content.style.display === '') ? 'block' : 'none';
+    blog__title.style.display = (blog__title.style.display === 'none' || blog__title.style.display === '') ? 'block' : 'none';
+    mainContent.classList.toggle('hidden');
+    profileInfoDescription.classList.toggle('hidden');
+    profileButtons.classList.toggle('hidden');
+    profileSocial.classList.toggle('hidden');
+});
+
+
 /*  SCROLL REVEAL ANIMATION  */
 const sr = ScrollReveal({ 
     origin: 'top', 
