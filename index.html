@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Amir Arsalan Yavari Portfolio</title>
+</head>
+
+<body>
+    <header class="profile container">
+        <i class="ri-moon-line change-theme" id="theme-button"> <small>Change Theme</small></i>
+        <i class="ri-user-smile-line blog" id="blog-button"> <small>My Portfolio</small></i>
+
+        <div class="profile__container grid">
+            <div class="profile__data">
+                <div class="profile__border">
+                    <div class="profile__perfil">
+                        <img src="assets/img/perfil.png" alt="Profile Picture">
+                    </div>
+                </div>
+                <h2 class="profile__name">Amir Arsalan (Adrian) Yavari</h2>
+                <h3 class="profile__profession">Fog Computing Researcher - DevOps Eng.</h3>
+                <h4 class="profile__profession">Sometime be an engineer; at the other times, try to be a normal person
+                </h4>
+
+                <div class="profile__info-group">
+                    <p class="profile__info-description">I am an M.Sc. Student at Sharif University of Technology (SUT).
+                        I love GNU & Linux, Software Engineering & Cloud Computing. I am also a dedicated advocate of
+                        the DevOps culture.
+                    </p>
+                </div>
+
+                <ul class="profile__social">
+                    <a href="https://github.com/arsalanyavari/" target="_blank" class="profile__social-link">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                    <a href="https://telegram.me/AmirArsalanYavari" target="_blank" class="profile__social-link">
+                        <i class="ri-telegram-fill"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/amir-arsalan-yavari" target="_blank" class="profile__social-link">
+                        <i class="ri-linkedin-box-fill"></i>
+                    </a>
+                    <a href="mailto:amirarsalan.yavari79@sharif.edu, aa.yavari@ce.sharif.edu, &bcc=arya48.yavari79@gmail.com"
+                        target="_blank" class="profile__social-link">
+                        <i class="ri-mail-fill"></i>
+                    </a>
+                    <a href="https://discord.com/channels/@me/arsalanyavari" target="_blank"
+                        class="profile__social-link">
+                        <i class="ri-discord-fill"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Amir.Arsalan.Yavari" target="_blank" class="profile__social-link">
+                        <i class="ri-youtube-fill"></i>
+                    </a>
+                </ul>
+
+                <div class="profile__buttons">
+                    <a href="assets/pdf/AmirArsalanYavari-resume.pdf" download="AmirArsalanYavari-resume.pdf"
+                        class="button">
+                        Download CV <i class="ri-download-line"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="filters container">
+            <ul class="filters__content">
+                <button class="filters__button filter-tab-active" data-target="#education">
+                    Educations
+                </button>
+                <button class="filters__button" data-target="#experiences">
+                    experiences
+                </button>
+                <button class="filters__button" data-target="#skills">
+                    Skills
+                </button>
+            </ul>
+
+            <div class="filters__sections">
+                <div class="education__content grid filters__active" data-content id="education">
+                    <article class="education__card">
+                        <img src="assets/img/sut.jpg" alt="Sharif University">
+                        <div class="education__modal">
+                            <div>
+                                <span class="education__subtitle">MSc. Student in the field of Fog Computing</span>
+                                <h3 class="education__title">Sharif University of Technology</h3>
+                                <a href="https://www.topuniversities.com/universities/sharif-university-technology"
+                                    class="education__button button button__small">
+                                    <i class="ri-link education__ranking"></i>
+                                    <p class="education__ranking">University Ranking</p>
+                                </a>
+                                <a href="https://en.sharif.edu/" class="education__button button button__small">
+                                    <i class="ri-link education__ranking"></i>
+                                    <p class="education__ranking">University Website</p>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="education__card">
+                        <img src="assets/img/iut.jpg" alt="Isfahan University of Technology">
+                        <div class="education__modal">
+                            <div>
+                                <span class="education__subtitle">BS. Computer Engineering Student</span>
+                                <h3 class="education__title">Isfahan University of Technology</h3>
+                                <a href="https://www.topuniversities.com/universities/isfahan-university-technology"
+                                    class="education__button button button__small">
+                                    <i class="ri-link education__ranking"></i>
+                                    <p class="education__ranking">University Ranking</p>
+                                </a>
+                                <a href="https://english.iut.ac.ir/" class="education__button button button__small">
+                                    <i class="ri-link education__ranking"></i>
+                                    <p class="education__ranking">University Website</p>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="experience__content grid" data-content id="experiences">
+                    <div class="experience__box">
+                        <h2 class="experience__title">Research Assistant</h2>
+                        <p class="experience__description">
+                            <b>Graduate Research Assistant</b><small> at Sharif University of Technology in the field of
+                                Fog Computing. &nbsp; <span class="time">(Oct 2023 - Present)</span></small>
+                        </p>
+                        <p class="experience__description">
+                            <b>Undergraduate Research Assistant</b><small> at Isfahan University of Technology in the
+                                field of Automating Program Repair. &nbsp; <span class="time">(Dec 2022 - Sep
+                                    2023)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>I worked on software automated repair in Software Laboratory under the supervision of
+                                    Dr. Elham Mahmoudzadeh, collaborating with MSc student Sajedeh Niknadaf. <a
+                                        href="assets/pdf/BS-project-poster-AmirArsalanYavari.pdf"><button
+                                            class="moreButton">More about project</button></a></p>
+                            </small>
+                        </div>
+                        <button class="experience__toggle-btn" id="toggleButton">Show More</button>
+                    </div>
+
+                    <div class="experience__box">
+                        <h2 class="experience__title">DevOps and SysAdmin Work Experience</h2>
+                        <p class="experience__description">
+                            <b>Ergo Platform</b><small> - "rosen-bridge" Project: <a
+                                    href="https://github.com/rosen-bridge"><button class="moreButton">Github
+                                        Organization</button></a></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>I worked for about 8 month with focus on Docker, Ansible, CI/CD, Proxmox, openvpn,
+                                    grafana-influxdb-telegraf, starting up Cardano node, etc...</p>
+                            </small>
+                        </div>
+                        <p class="experience__description">
+                            <b>Novin dadeh pardazi arses</b>.
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>
+                                    Leveraging this experience, I successfully completed a university training course.
+                                    My primary focus was on Docker, CI/CD, PostgreSQL, and Nginx. Additionally, I
+                                    delivered two presentations on Nginx and Docker, with the slides available upon
+                                    request.
+                                    I also delivered two presentations on Nginx and Docker, for which the slides are
+                                    available.
+                                    <a href="assets/pdf/docker-arses.pdf"><u><button class="moreButton">Docker
+                                                Presentation</button></u></a>
+                                    <a href="assets/pdf/nginx-arses.pdf"><u><button class="moreButton">Nginx
+                                                Presentation</button></u></a>
+                                </p>
+                            </small>
+                        </div>
+                        <button class="experience__toggle-btn" id="toggleButton">Show More</button>
+                    </div>
+
+                    <div class="experience__box">
+                        <h2 class="experience__title">Teaching Assistant</h2>
+
+                        <p class="experience__description">
+                            <b>Testability</b> (Graduate Course)<small> at SUT under the supervision of Dr. Shaahin
+                                Hessabi. <br> <span class="time">(Sep 2024 - Feb 2025)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Software Engineering 1</b><small> at IUT under the supervision of Dr. Shirin
+                                Baghoolizadeh. <br> <span class="time">(Sep 2024 - Feb 2025)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Cloud Computing</b> (Graduate Course)<small> at IUT under the supervision of Dr. Zeinab
+                                Zali. <br> <span class="time">(Jan 2024 - Jul 2024)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            Chief of Teacher's Assistants of the <b>Software Testing</b><small> at IUT under the
+                                supervision of Dr. Shirin Baghoolizadeh. <br> <span class="time">(Jan 2024 - Jun
+                                    2024)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Logical Design and Circuits</b><small> at SUT under the supervision of Dr. Shaahin
+                                Hessabi. <br> <span class="time">(Jan 2024 - Jun 2024)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Computer Networking</b><small> course at SUT under the supervision of Dr. Kambiz
+                                Mizanian. <br> <span class="time">(Dec 2023 - Feb 2024)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Algorithm Design</b><small> at IUT under the supervision of Dr. Muhammadreza Heidarpour.
+                                <br> <span class="time">(Feb 2023 - Jul 2023)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            Chief of Teacher's Assistants of the <b>Operating systems</b><small> at IUT under the
+                                supervision of Dr. Zeinab Zali. <br> <span class="time">(Sep 2022 - Jan
+                                    2023)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Operating systems</b><small> at IUT under the supervision of Dr. Muhammadreza Heidarpour.
+                                <br> <span class="time">(Sep 2022 - Jan 2023)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            Chief of Teacher's Assistants of the <b>Fundamentals of programming</b><small> with C
+                                language at IUT under the supervision of Dr. Samaneh Hosseini Semnani. <br> <span
+                                    class="time">(Sep 2022 - Dec 2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Computer networks</b><small> at IUT under the supervision of Dr. Muhammadreza Heidarpour.
+                                <br> <span class="time">(Feb 2022 - Jul 2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            Chief of Teacher's Assistants of the <b>Advanced programming</b><small> course that about
+                                Object-Oriented Programming using C++ and QT Framework at IUT under the supervision of
+                                Dr. Shirin Baghoolizadeh. <br> <span class="time">(Feb 2022 - Jul 2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Data Structures</b><small> at IUT under the supervision of Dr. Samaneh Hosseini Semnani.
+                                <br> <span class="time">(Sep 2021 - Jan 2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+
+                        <p class="experience__description">
+                            <b>Fundamentals of programming</b><small> with C language at IUT under the supervision of
+                                Dr. Samaneh Hosseini Semnani. <br> <span class="time">(Nov 2020 - Feb
+                                    2021)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="experience__box">
+                        <h2 class="experience__title">Laboratory and Workshop Supervisor</h2>
+                        <p class="experience__description">
+                            <b>Supervisor of Computer Networks Laboratory</b><small> of 401-2 & 403-2 semester at IUT.
+                                <br>
+                                <span class="time">(Feb 2023 - Jun 2023 & Feb 2024 - May 2024)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>
+                                    Our team also outlined the instructions and pre-report for the lab experiments, as
+                                    well as the lab project. You can view all the related documentation at the link
+                                    below.
+                                </p>
+                            </small>
+                            <a href="https://drive.google.com/drive/u/0/folders/1SwWoqvxPAkkvH740In3Q4vf978PkHU4C"><button
+                                    class="moreButton">Documents</button></a>
+                        </div>
+                        <p class="experience__description">
+                            <b>Supervisor of Operating System Laboratory</b><small> of 401-1 semester at IUT. <br> <span
+                                    class="time">(Sep 2022 - Dec 2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>
+                                    You can see all the instructions and their answers code in <a
+                                        href="https://github.com/arsalanyavari/os-lab"><button class="moreButton">this
+                                            repository</button></button></a>.
+                                </p>
+                            </small>
+                        </div>
+                        <p class="experience__description">
+                            <b>Supervisor of the Linux workshop</b><small> that organized by Isfahan University of
+                                Technology Scientific Society of Computer Engineering(IUT CESSA). <br> <span
+                                    class="time">(Feb 2022 - Mar 2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <a
+                                href="https://docs.google.com/presentation/d/110G27M3DCW3oQdH6-eKFSlT4YUo-fTjH_xRxL4qRUXo/"><button
+                                    class="moreButton">Workshop Slides</button></a>
+                        </div>
+                        <p class="experience__description">
+                            <b>LPIC1 workshop mentor</b><small> of the Linux LPIC1 workshop that taught by Mr. Saleh
+                                Mohammadi. <br> <span class="time">(Feb 2021 - May 2021)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p></p>
+                            </small>
+                        </div>
+                        <button class="experience__toggle-btn" id="toggleButton">Show More</button>
+                    </div>
+
+                    <div class="experience__box">
+                        <h2 class="experience__title">Volunteering Activities</h2>
+                        <p class="experience__description">
+                            <b>IUTCESSA Chairperson</b><small> &nbsp; <span class="time">(Oct 2021 - Dec
+                                    2022)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>
+                                    As the head of the Computer Engineering Student Scientific Association at Isfahan
+                                    University of Technology, I led the team to be recognized as the best scientific
+                                    association in the country in the competitive section In a festival called "حرکت".
+
+                                </p>
+                            </small>
+                        </div>
+                        <p class="experience__description">
+                            <b>APACHEE Club Central Council Member</b><small> &nbsp; <span class="time">(Feb 2021 - Oct
+                                    2021)</span></small>
+                        </p>
+                        <div class="experience__content">
+                            <small>
+                                <p>
+                                    As a member of the APACHEE Club and congress at Isfahan University of Technology, I
+                                    played a pivotal role. Additionally, I served as the Steganography Workshop
+                                    Supervisor at the Conference of the Iranian Crypto Society 2021.
+
+                                </p>
+                            </small>
+                            <a href="https://iscisc2021.ui.ac.ir/files_site/files/r_27_210831104811.pdf"><button
+                                    class="moreButton">Documents</button></a>
+                        </div>
+                        <p class="experience__description">
+                            <b>IUTCPC Technical Team Leader</b><small> of Isfahan University of Technology Collegiate
+                                Programming Contest <span class="time">2021</span>.</small>
+                        </p>
+
+                        <button class="experience__toggle-btn" id="toggleButton">Show More</button>
+                    </div>
+                </div>
+
+                <div class="skills__content grid" data-content id="skills">
+                    <div class="skills__area">
+                        <h3 class="skills__title">
+                            Research and Development (Academic Focus)
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Fog Computing</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Cloud Computing</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <div>
+                                            <h3 class="skills__name">Steganography</h3>
+                                            <span class="skills__level">basic</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <div>
+                                            <h3 class="skills__name">Programming, Scripting</h3>
+                                            <span class="skills__level">basic</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Design Algorithms<br>and Data Structures</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Object-Oriented<br>Programming (OOP)</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Teaching Experience</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills__area">
+                        <h3 class="skills__title">
+                            Technical Proficiencies (DevOps and System Administration Focus)
+                        </h3>
+                        <div class="skills__box">
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Linux, Command Line</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">System Hardening</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Docker</h3>
+                                        <span class="skills__level">Advanced</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Ansible</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Bash, Shell Scripting</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Python, C++, C</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Git</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">QT Framework</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="skills__group">
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Cloud Computing Concepts</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">PostgreSQL, MongoDB</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Grafana</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">CI/CD (Github Actions, GitLab CI)</h3>
+                                        <span class="skills__level">intermediate</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Proxmox</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Nginx</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">ML/DL</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+
+                                <div class="skills__data">
+                                    <i class="ri-checkbox-circle-line"></i>
+
+                                    <div>
+                                        <h3 class="skills__name">Scarping</h3>
+                                        <span class="skills__level">basic</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main>
+        <section class="container">
+            <h3 class="blog__title">
+                :محتواهایی که توسط من تولید شدن
+            </h3>
+            <div class="blog-cards-container">
+                <div class="youtube__content container">
+                    <img src="assets/img/yc.png" alt="youtube channel cover" id="youtube-avatar">
+                    <h2 id="youtube-title">
+                        Amir Arsalan Yavari
+                    </h2>
+                    <sub id="youtube-stats">
+                        @Amir.Arsalan.Yavari • NaN subscribers
+                    </sub>
+                    <p id="youtube-description">
+                        یادگیری دواپس ...more
+                    </p>
+                    <div>
+                        <a href="https://www.youtube.com/@Amir.Arsalan.Yavari?sub_confirmation=1" target="_blank"
+                            class="youtube_link">
+                            SUBSCRIBE
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.youtube.com/@Amir.Arsalan.Yavari" target="_blank" class="open_in_youtube">
+                            VISIT CHANNEL
+                        </a>
+                    </div>
+                </div>
+
+                <div class="blog__content container">
+                    <img src="assets/img/tc.jpg" alt="telegram channel cover">
+                    <h2>
+                        Amir Arsalan (Adrian)<br> Yavari’s Poems
+                    </h2>
+                    <sub>
+                        NaN subscribers
+                    </sub>
+                    <p>
+                        اینجا شعرامو مینویسم. اگه دوست داشتین به
+                        <br>
+                        .دوستاتونم معرفی کنین
+                        <br>
+                        آسمان
+                        <br>
+
+                        <br>
+                        ،زمان و زمانه گر غلط بود
+                        <br>
+                        دل را که مگر شکی به سر بود؟
+                    </p>
+                    <div>
+                        <a href="tg://resolve?domain=AmirArsalanYavari_Poems" class="telegram_link">
+                            VIEW IN TELEGRAM
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://web.telegram.org/k/#?tgaddr=tg%3A%2F%2Fresolve%3Fdomain%3DAmirArsalanYavari_Poems"
+                            class="open_in_telegram">
+                            OPEN IN WEB
+                        </a>
+                    </div>
+                </div>
+
+                <div class="linkedin__content container">
+                    <img src="assets/img/linkedin_post.jpeg" alt="linkedin post cover">
+                    <h2>
+                        باگ ۱۱ ساله ای که پیدا کردم و درستش کردم
+                    </h2>
+                    <sub>
+                        jcal باگ تاریخ در کامند
+                    </sub>
+                    <p>
+                        دانستنی‌های جالب:
+                        <br>
+                        🔹 میدونستین کبیسه‌های ۵ ساله داریم؟ 😂️️
+                        <br>
+                        🔹 میدونستین کبیسه‌های شمسی و میلادی الگوشون با هم فرق داره و همین الگو از جولین به گریگوری برای
+                        میلادی تغییر کرده؟ 😂️️
+                        <br>
+                        🔹 میدونستین تابع mktime که سیستمی هستش برای قبل epoch time (ینی قبل 1970/1/1) زمان منفی
+                        برمیگردونه؟ 😂️️
+                        <br>
+                        ◾ جالب‌تر اینکه میدونستین واسه زمان قبل 1900 تعداد ثانیه‌ی گذشته رو نه تنها منفی بر نمی‌گردونه
+                        بلکه 0 برمیگردونه؟ 😂️️
+                        <br>
+                        ما همه اینا و کلی رندوم فکت دیگه رو حین باگ‌ فیکس کردن‌ها متوجه شدیم (این بین با wikifunction و
+                        تاریخ پهلوی هم آشنا شدم).
+                        <br>
+                        🔁 پروژه‌ی persiancal الان فورک کد اشکانه، و توسعه‌ی ابزارهای تاریخ شمسی از اینجا ادامه پیدا
+                        می‌کنه.
+                    </p>
+                    <div>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7324315685919076352/"
+                            target="_blank" class="linkedin_link">
+                            VIEW ON LINKEDIN
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+        Be a nice person :D
+    </footer>
+
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
