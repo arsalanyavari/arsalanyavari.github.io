@@ -1,7 +1,17 @@
-document.addEventListener('DOMContentLoaded', () => {
+
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.scrollTo(0, 0);
+
+function bindShowMoreButtons() {
     const toggleButtons = document.querySelectorAll('.experience__toggle-btn');
 
     toggleButtons.forEach(button => {
+        // Prevent multiple bindings
+        if (button.dataset.bound) return;
+        button.dataset.bound = "true";
+
         button.addEventListener('click', () => {
             const contentDivs = button.closest('.experience__box').querySelectorAll('.experience__content');
 
@@ -17,27 +27,50 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    bindShowMoreButtons();
 });
 
 const tabs = document.querySelectorAll('[data-target]'),
     tabContents = document.querySelectorAll('[data-content]')
 
+const activateTab = (targetId) => {
+    // Prevent hash jumping by looking for #tab-<id> instead of <id>
+    const realTargetId = targetId.replace('#', '#tab-');
+    const target = document.querySelector(realTargetId);
+    if (!target) return;
+
+    tabContents.forEach(tc => tc.classList.remove('filters__active'));
+    target.classList.add('filters__active');
+
+    tabs.forEach(t => {
+        if (t.dataset.target === targetId) {
+            t.classList.add('filter-tab-active');
+        } else {
+            t.classList.remove('filter-tab-active');
+        }
+    });
+};
+
 tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.target)
+        // Update URL hash without jumping the page
+        history.replaceState(null, null, tab.dataset.target);
+        activateTab(tab.dataset.target);
+    });
+});
 
-        tabContents.forEach(tc => {
-            tc.classList.remove('filters__active')
-        })
-        target.classList.add('filters__active')
-
-        tabs.forEach(t => {
-            t.classList.remove('filter-tab-active')
-        })
-
-        tab.classList.add('filter-tab-active')
-    })
-})
+// Load the correct tab based on hash on initial load
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash && document.querySelector(hash.replace('#', '#tab-'))) {
+        activateTab(hash);
+    } else {
+        activateTab('#education'); // Default
+    }
+});
 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
@@ -68,29 +101,51 @@ const profileInfoDescription = document.querySelector('.profile__info-descriptio
 const profileButtons = document.querySelector('.profile__buttons');
 const profileSocial = document.querySelector('.profile__social');
 
+function toggleBlogView(forceBlog = null) {
+    const blogButtonText = document.querySelector('.blog small');
+
+    let isCurrentlyPortfolio = !document.body.classList.contains('blog-view-active');
+    let willBeBlog = forceBlog !== null ? forceBlog : isCurrentlyPortfolio;
+
+    if (willBeBlog) {
+        document.body.classList.add('blog-view-active');
+        blogButtonText.textContent = 'My Portfolio';
+        localStorage.setItem('selected-view', 'blog');
+    } else {
+        document.body.classList.remove('blog-view-active');
+        blogButtonText.textContent = 'My Blog';
+        localStorage.setItem('selected-view', 'portfolio');
+
+        // Reset ScrollReveal inline styles that might be stuck when elements were hidden
+        const elementsToReset = document.querySelectorAll('.profile__social, .profile__info-group, .profile__buttons, .filters__content, .filters');
+        elementsToReset.forEach(el => {
+            el.removeAttribute('style');
+        });
+
+        // Re-trigger animations to show them properly
+        if (typeof sr !== 'undefined') {
+            sr.reveal(`.profile__social`, { delay: 100 });
+            sr.reveal(`.profile__info-group`, { interval: 100, delay: 100 });
+            sr.reveal(`.profile__buttons`, { delay: 200 });
+            sr.reveal(`.filters__content`, { delay: 300 });
+            sr.reveal(`.filters`, { delay: 400 });
+        }
+    }
+}
+
 document.querySelector('.blog').addEventListener('click', function (event) {
     event.preventDefault();
-    const blog__content = document.querySelector('.blog__content');
-    const blog__title = document.querySelector('.blog__title');
-    const youtube__content = document.querySelector('.youtube__content');
-    const linkedin__content = document.querySelector('.linkedin__content');
-    const blogButtonText = this.querySelector('small');
+    toggleBlogView();
+});
 
-    blog__content.style.display = (blog__content.style.display === 'none' || blog__content.style.display === '') ? 'block' : 'none';
-    blog__title.style.display = (blog__title.style.display === 'none' || blog__title.style.display === '') ? 'block' : 'none';
-    youtube__content.style.display = (youtube__content.style.display === 'none' || youtube__content.style.display === '') ? 'block' : 'none';
-    linkedin__content.style.display = (linkedin__content.style.display === 'none' || linkedin__content.style.display === '') ? 'block' : 'none';
-    mainContent.classList.toggle('hidden');
-    profileInfoDescription.classList.toggle('hidden');
-    profileButtons.classList.toggle('hidden');
-    profileSocial.classList.toggle('hidden');
-
-    if (blogButtonText.textContent.trim() === 'My Portfolio') {
-        blogButtonText.textContent = 'My Blog';
-    } else {
-        blogButtonText.textContent = 'My Portfolio';
+// Restore blog/portfolio view on load
+document.addEventListener('DOMContentLoaded', () => {
+    const savedView = localStorage.getItem('selected-view');
+    if (savedView === 'blog') {
+        toggleBlogView(true);
     }
 });
+
 
 const sr = ScrollReveal({
     origin: 'top',
